@@ -14,7 +14,7 @@ const Chat = () => {
 
   const handleEmoji = (e) => {
     setText((prev) => prev +e.emoji);
-    setOpen(false);
+    setOpen(true);
     }
   
 
@@ -22,21 +22,21 @@ const Chat = () => {
     <div className='chat'>
       <div className="top">
         <div className="user">
-          <img src="./avatar.png" alt="" />
+          <img src="./avatar.png" alt="" draggable="false"/>
           <div className="texts">
             <span>Jane Doe</span>
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
         </div>
         <div className="icons">
-          <img src="./phone.png" alt="" />
-          <img src="./video.png" alt="" />
-          <img src="./info.png" alt="" />
+          <img src="./phone.png" alt="" draggable="false"/>
+          <img src="./video.png" alt="" draggable="false"/>
+          <img src="./info.png" alt="" draggable="false"/>
         </div>
       </div>
       <div className="center">
         <div className="message">
-          <img src="./avatar.png" alt="" />
+          <img src="./avatar.png" alt=""  />
           <div className="texts">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto officiis incidunt magnam, odit dolorum corporis at libero. Molestias, nesciunt illo!</p>
             <span>1 min ago</span>
