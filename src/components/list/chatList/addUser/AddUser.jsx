@@ -13,8 +13,7 @@ import {
   where,
 } from "firebase/firestore";
 import { useState } from "react";
-import useUserStore from "../../../../lib/userStore";
-
+import { useUserStore } from "../../../../lib/userStore";
 
 const AddUser = () => {
   const [user, setUser] = useState(null);
