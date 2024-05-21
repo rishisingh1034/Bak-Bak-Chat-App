@@ -1,9 +1,10 @@
 import { toast } from 'react-toastify'
-import { auth } from '../../lib/firebase'
+import { auth, db } from '../../lib/firebase'
 import './detail.css'
 import React from 'react'
 import { useChatStore } from '../../lib/chatStore'
 import { useUserStore } from '../../lib/userStore'
+import { arrayRemove, arrayUnion, doc, updateDoc } from 'firebase/firestore'
 
 const Detail = () => {
   const logout = () => {
