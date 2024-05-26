@@ -71,3 +71,27 @@
     background-color: #dddddd35;
   }
 }
+
+@media screen and (max-width:600px) {
+  .login{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    .loginform{
+      margin-bottom: -85px;
+    }
+    .seperator{
+      display: none;
+    }
+    .register{
+      padding: -10px;
+      h2{
+        font-size: large;
+      }
+      form{
+        margin-top: -15px;
+        height: -30px;
+      }
+    }
+  }
+}

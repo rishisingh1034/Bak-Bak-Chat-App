@@ -77,7 +77,7 @@ const Login = () => {
 
   return (
     <div className="login">
-      <div className="item">
+      <div className="item loginform">
         <h2>Welcome Back,</h2>
         <form onSubmit={handleLogin}>
           <input type="text" placeholder='Email' name='email' />
@@ -87,7 +87,7 @@ const Login = () => {
       </div>
 
       <div className="seperator"></div>
-      <div className="item">
+      <div className="item register">
         <h2>Create an Account</h2>
         <form onSubmit={handleRegister}>
           <label htmlFor="file">Upload a Avatar
