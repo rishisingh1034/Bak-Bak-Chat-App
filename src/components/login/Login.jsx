@@ -13,6 +13,7 @@ const Login = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [active, setActive] = useState(true);
 
   const handleAvatar = (e) => {
     if (e.target.files[0]) {
@@ -77,17 +78,17 @@ const Login = () => {
 
   return (
     <div className="login">
-      <div className="item loginform">
+      {active?null:<div className="item loginform">
         <h2>Welcome Back,</h2>
         <form onSubmit={handleLogin}>
           <input type="text" placeholder='Email' name='email' />
           <input type="password" placeholder='Password' name='password' />
           <button disabled={loading}>{loading ? "Loading" : "Sign In"}</button>
         </form>
-      </div>
+        <div>Don't have an account? <button onClick={()=>setActive(true)}>Register</button></div>
+      </div>}
 
-      <div className="seperator"></div>
-      <div className="item register">
+      {!active?null:<div className="item register">
         <h2>Create an Account</h2>
         <form onSubmit={handleRegister}>
           <label htmlFor="file">Upload a Avatar
@@ -99,7 +100,8 @@ const Login = () => {
           <input type="password" placeholder='Password' name='password' />
           <button disabled={loading}>{loading ? "Loading" : "Sign Up"}</button>
         </form>
-      </div>
+        <div>Have an account? <button onClick={()=>setActive(false)}>Sign In</button></div>
+      </div>}
     </div>
   )
 }
