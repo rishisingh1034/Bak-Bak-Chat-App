@@ -33,3 +33,10 @@ body {
   border-radius: 10px;
   background-color: rgba(17, 25, 40, 0.9);
 }
+
+@media screen and (max-width: 480px){
+  .container{
+    height: 98vh;
+    width: 90vw;
+  }
+}
