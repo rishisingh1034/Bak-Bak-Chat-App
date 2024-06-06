@@ -4,7 +4,15 @@
   display: flex;
   align-items: center;
   gap: 100px;
-  padding: 20px; /* Added padding for better appearance on smaller screens */
+  padding: 20px;
+  
+  .front{
+    height: 60vh;
+    width: 40vw;
+    @media screen and (max-width: 480px){
+        display: none;
+    }
+  }
 
   .item {
       flex: 1;
@@ -103,7 +111,6 @@
 
   @media (max-width: 480px) {
       padding: 5px; /* Minimum padding for very small screens */
-
       .item {
           gap: 10px; /* Reduced gap between elements */
       }

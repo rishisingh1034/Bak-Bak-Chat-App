@@ -78,6 +78,7 @@ const Login = () => {
 
   return (
     <div className="login">
+      <img src="./chat-front.svg" alt="" className='front' draggable={false}/>
       {active?null:<div className="item loginform">
         <h2>Welcome Back,</h2>
         <form onSubmit={handleLogin}>
