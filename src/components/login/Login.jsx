@@ -5,6 +5,8 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "fire
 import { auth, db } from '../../lib/firebase'
 import { collection, doc, setDoc, where } from 'firebase/firestore';
 import upload from '../../lib/upload'
+import Lottie from 'lottie-react';
+import chat from '../../../public/chat.json'
 
 const Login = () => {
   const [avatar, setAvatar] = useState({
@@ -78,7 +80,8 @@ const Login = () => {
 
   return (
     <div className="login">
-      <img src="./chat-front.svg" alt="" className='front' draggable={false}/>
+      {/* <img src="./chat-front.svg" alt="" className='front' draggable={false}/> */}
+      <div style={{width:"50%"}}><Lottie animationData={chat}/></div>
       {active?null:<div className="item loginform">
         <h2>Welcome Back,</h2>
         <form onSubmit={handleLogin}>

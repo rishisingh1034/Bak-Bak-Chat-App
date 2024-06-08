@@ -8,6 +8,8 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './lib/firebase'
 import { useUserStore } from './lib/userStore'
 import { useChatStore } from './lib/chatStore'
+import Lottie from 'lottie-react'
+import loading from '../public/loading.json'
 
 
 const App = () => {
@@ -24,7 +26,7 @@ const App = () => {
     };
   },[fetchUserInfo]);
 
-  if(isLoading) return <div className='loading'>Loading...</div>
+  if(isLoading) return <div className='loading'><Lottie animationData={loading}/></div>
 
   return (
     <div className='container'>
