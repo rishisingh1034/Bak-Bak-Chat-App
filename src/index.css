@@ -32,7 +32,7 @@ body {
 
 .loading{
   width: 75%;
-  text-align: center;
+  margin-left: 25%;
 }
 
 @media screen and (max-width: 480px){

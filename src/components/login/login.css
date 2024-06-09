@@ -76,16 +76,20 @@
           }
       }
       div{
+        margin-left: 60px;
         button{
-              border: none;
-              background: transparent;
-              color: white;
-              cursor: pointer;
-              font-weight: 500;
-              border-bottom: 1px solid rgb(157, 194, 255);
+            width: 80%;
+            padding: 15px;
+            border: 1px solid white;
+            background-color: transparent;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-top: 20px;
               
               &:hover{
-                color: rgb(157, 194, 255);
+                background-color: #99bddd85;
               }
       }
   }
