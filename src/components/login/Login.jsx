@@ -81,7 +81,7 @@ const Login = () => {
   return (
     <div className="login">
       {/* <img src="./chat-front.svg" alt="" className='front' draggable={false}/> */}
-      <div style={{width:"50%"}}><Lottie animationData={chat}/></div>
+      <div style={{width:"50%"}} className='front'><Lottie animationData={chat}/></div>
       {active?null:<div className="item loginform">
         <h2>Welcome Back,</h2>
         <form onSubmit={handleLogin}>
