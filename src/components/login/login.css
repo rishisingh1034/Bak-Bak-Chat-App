@@ -1,126 +1,172 @@
 .login {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 100px;
-  padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    padding: 20px;
+    opacity: 0; /* Initial state for fade-in animation */
+    animation: fadeIn 1s forwards; /* Apply fade-in animation */
   
-  .front{
-    
-    @media screen and (max-width: 480px){
+    .front {
+      @media screen and (max-width: 480px) {
         display: none;
+      }
     }
-  }
-
-  .item {
+  
+    .item {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 20px;
-
+      transform: translateY(50px); /* Initial state for slide-up animation */
+      animation: slideUp 0.5s ease-out forwards; /* Apply slide-up animation */
+  
       form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+  
+        input {
+          padding: 15px;
+          border: none;
+          outline: none;
+          background-color: rgba(17, 25, 40, 0.6);
+          color: white;
+          border-radius: 5px;
+          width: 100%; /* Ensures inputs take full width on smaller screens */
+          transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+          
+          &:focus {
+            background-color: rgba(17, 25, 40, 0.8);
+            transform: scale(1.05);
+          }
+        }
+  
+        label {
+          width: 100%;
           display: flex;
           align-items: center;
-          flex-direction: column;
-          justify-content: center;
-          gap: 20px;
-
-          input {
-              padding: 15px;
-              border: none;
-              outline: none;
-              background-color: rgba(17, 25, 40, 0.6);
-              color: white;
-              border-radius: 5px;
-              width: 100%; /* Ensures inputs take full width on smaller screens */
+          justify-content: space-between;
+          cursor: pointer;
+          text-decoration: underline;
+  
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: opacity 0.3s, transform 0.2s; /* Smooth transitions */
+            
+            &:hover {
+              opacity: 1;
+              transform: scale(1.1);
+            }
           }
-
-          label {
-              width: 100%;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              cursor: pointer;
-              text-decoration: underline;
-
-              img {
-                  width: 50px;
-                  height: 50px;
-                  border-radius: 10px;
-                  object-fit: cover;
-                  opacity: 0.6;
-              }
+        }
+  
+        button {
+          width: 100%;
+          padding: 15px;
+          border: none;
+          background-color: #1f8ef1;
+          color: white;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: 500;
+          transition: transform 0.2s, background-color 0.3s; /* Smooth transitions */
+  
+          &:disabled {
+            cursor: not-allowed;
+            background-color: #1f8ff13f;
           }
-
-          button {
-              width: 100%;
-              padding: 15px;
-              border: none;
-              background-color: #1f8ef1;
-              color: white;
-              border-radius: 5px;
-              cursor: pointer;
-              font-weight: 500;
-
-              &:disabled {
-                  cursor: not-allowed;
-                  background-color: #1f8ff13f;
-              }
-
-              &:active {
-                  transform: translateY(3px);
-              }
+  
+          &:active {
+            transform: translateY(3px);
           }
+  
+          &:hover:enabled {
+            background-color: #0056b3;
+            transform: scale(1.05);
+          }
+        }
       }
-      div{
+  
+      div {
         margin-left: 60px;
-        button{
-            width: 80%;
-            padding: 15px;
-            border: 1px solid white;
-            background-color: transparent;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 500;
-            margin-top: 20px;
-              
-              &:hover{
-                background-color: #99bddd85;
-              }
+        
+        button {
+          width: 80%;
+          padding: 15px;
+          border: 1px solid white;
+          background-color: transparent;
+          color: white;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: 500;
+          margin-top: 20px;
+          transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+  
+          &:hover {
+            background-color: #99bddd85;
+            transform: scale(1.05);
+          }
+        }
       }
-  }
-
-
-  @media (max-width: 1024px) {
-      gap: 50px; 
+    }
+  
+    .seperator {
+      height: 80%;
+      width: 2px;
+      background-color: #dddddd35;
+      transition: height 0.3s, width 0.3s; /* Smooth transitions */
+    }
+  
+    @media (max-width: 1024px) {
+      gap: 50px;
       padding: 10px;
+      
       .seperator {
-          height: 60%;
+        height: 60%;
       }
-  }
-
-  @media (max-width: 768px) {
+    }
+  
+    @media (max-width: 768px) {
       flex-direction: column; /* Stack items vertically */
       gap: 30px; /* Further reduced gap for smaller screens */
-
+  
       .seperator {
-          width: 80%;
-          height: 2px; /* Change separator to horizontal */
+        width: 80%;
+        height: 2px; /* Change separator to horizontal */
       }
-  }
-
-  @media (max-width: 480px) {
+    }
+  
+    @media (max-width: 480px) {
       padding: 5px; /* Minimum padding for very small screens */
+      
       .item {
-          gap: 10px; /* Reduced gap between elements */
+        gap: 10px; /* Reduced gap between elements */
       }
-
+  
       form {
-          gap: 10px; /* Reduced gap between form elements */
+        gap: 10px; /* Reduced gap between form elements */
       }
+    }
   }
-}
-}
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    to {
+      transform: translateY(0);
+    }
+  }
+  
